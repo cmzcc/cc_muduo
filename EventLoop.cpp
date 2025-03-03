@@ -26,7 +26,8 @@ int createEventfd()
     return evtfd;
 }
 EventLoop::EventLoop()
-    : looping_(false), quit_(false), callingPendingFunctors_(false), threadId_(CurrentThread::tid()), poller_(Poller::newDefaultPoller(this)), wakeupfd_(createEventfd()), wakeupChannel_(new Channel(this, wakeupfd_))
+    : looping_(false), quit_(false), callingPendingFunctors_(false), threadId_(CurrentThread::tid()),
+      poller_(Poller::newDefaultPoller(this)), wakeupfd_(createEventfd()), wakeupChannel_(new Channel(this, wakeupfd_)),timerQueue_(std::make_shared<TimerQueue>(this)) // 使用shared_ptr
 
 {
     LOG_DEBUG("EventLoop creadted %p in thread %d\n", this, threadId_);

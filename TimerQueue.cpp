@@ -156,6 +156,7 @@ namespace detail
             }
         }
 
+        // TimerQueue.cpp
         bool TimerQueue::insert(std::shared_ptr<Timer> timer)
         {
             bool earliestChanged = false;
@@ -166,13 +167,12 @@ namespace detail
                 earliestChanged = true;
             }
 
-            auto result = timers_.insert(Entry(when, timer));
+            timers_.insert({when, timer});
+
             if (earliestChanged)
             {
-                // 更新timerfd触发时间
-                detail::resetTimerfd(timerfd_, timers_.begin()->first);
+                detail::resetTimerfd(timerfd_, when); // 立即更新触发时间
             }
-  
+
             return earliestChanged;
         }
-
