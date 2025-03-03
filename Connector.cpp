@@ -187,6 +187,9 @@ void Connector::handleError()
 // Connector.cpp
 void Connector::retry(int delayMs)
 {
+    int sockfd = removeAndResetChannel();
+    sockets::close(sockfd); // 关闭无效的socket
+    retryDelayMs_ = std::min(retryDelayMs_ * 2, kMaxRetryDelayMs);
     auto weak_this = std::weak_ptr<Connector>(shared_from_this());
     loop_->runAfter(std::chrono::milliseconds(delayMs), [weak_this]()
                     {

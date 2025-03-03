@@ -74,32 +74,32 @@ namespace detail
             timerfdChannel_.enableReading();
         }
 
+        // TimerQueue.cpp
         TimerQueue::~TimerQueue()
         {
             timerfdChannel_.disableAll();
             ::close(timerfd_);
+            {
+                std::lock_guard<std::mutex> lock(mutex_);
+                timers_.clear(); // 清空所有定时器
+            }
         }
 
         // TimerQueue.cpp
         TimerId TimerQueue::addTimer(Timer::TimerCallback cb, TimePoint when, Duration interval)
         {
             auto timer = std::make_shared<Timer>(std::move(cb), when, interval);
-
-            // 使用weak_ptr捕获当前对象的弱引用
+            int64_t sequence = timer->sequence(); // 在异步操作前获取序列号
             std::weak_ptr<TimerQueue> weak_this = shared_from_this();
 
-            loop_->queueInLoop([weak_this, timer = std::move(timer)]() mutable
+            loop_->queueInLoop([weak_this, timer]() mutable
                                {
         if (auto shared_this = weak_this.lock()) {
-            // 确认对象存活后执行插入
-            shared_this->insert(std::move(timer));
-        } else {
-            LOG_ERROR("TimerQueue已销毁，无法添加定时器");
+            shared_this->insert(timer);
         } });
 
-            return TimerId(timer, timer->sequence());
+            return TimerId(timer, sequence); // 使用已捕获的sequence
         }
-
         void TimerQueue::cancel(TimerId timerId)
         {
             loop_->runInLoop([this, timerId]
@@ -159,6 +159,7 @@ namespace detail
         // TimerQueue.cpp
         bool TimerQueue::insert(std::shared_ptr<Timer> timer)
         {
+            std::lock_guard<std::mutex> lock(mutex_); // 加锁
             bool earliestChanged = false;
             TimePoint when = timer->expiration();
             auto it = timers_.begin();
@@ -166,13 +167,10 @@ namespace detail
             {
                 earliestChanged = true;
             }
-
             timers_.insert({when, timer});
-
             if (earliestChanged)
             {
-                detail::resetTimerfd(timerfd_, when); // 立即更新触发时间
+                detail::resetTimerfd(timerfd_, when);
             }
-
             return earliestChanged;
         }
