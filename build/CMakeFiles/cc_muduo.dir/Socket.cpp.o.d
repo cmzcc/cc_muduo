@@ -1,8 +1,8 @@
 CMakeFiles/cc_muduo.dir/Socket.cpp.o: \
- /home/cmzcc/c++projects/cc_muduo/Socket.cpp /usr/include/stdc-predef.h \
- /home/cmzcc/c++projects/cc_muduo/Socket.h \
- /home/cmzcc/c++projects/cc_muduo/noncopyable.h \
- /home/cmzcc/c++projects/cc_muduo/Logger.h /usr/include/c++/13/string \
+ /home/cmzcc/c++projects/cc/cc_muduo/Socket.cpp \
+ /usr/include/stdc-predef.h /home/cmzcc/c++projects/cc/cc_muduo/Socket.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/noncopyable.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/Logger.h /usr/include/c++/13/string \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -112,8 +112,8 @@ CMakeFiles/cc_muduo.dir/Socket.cpp.o: \
  /usr/include/c++/13/bits/functional_hash.h \
  /usr/include/c++/13/bits/hash_bytes.h \
  /usr/include/c++/13/bits/basic_string.tcc /usr/include/c++/13/stdlib.h \
- /home/cmzcc/c++projects/cc_muduo/InetAddress.h /usr/include/arpa/inet.h \
- /usr/include/netinet/in.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/InetAddress.h \
+ /usr/include/arpa/inet.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \

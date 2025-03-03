@@ -46,7 +46,7 @@ private:
     void connecting(int sockfd);
     void handleWrite();
     void handleError();
-    void retry(int sockfd);
+    void retry(int delayMs); // 修改参数名
     int removeAndResetChannel();
     void resetChannel();
 
@@ -61,3 +61,4 @@ private:
 };
 
 using ConnectorPtr = std::shared_ptr<Connector>;
+// Connector.h

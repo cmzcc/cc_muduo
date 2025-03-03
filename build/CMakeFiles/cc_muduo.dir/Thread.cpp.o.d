@@ -1,7 +1,7 @@
 CMakeFiles/cc_muduo.dir/Thread.cpp.o: \
- /home/cmzcc/c++projects/cc_muduo/Thread.cpp /usr/include/stdc-predef.h \
- /home/cmzcc/c++projects/cc_muduo/Thread.h \
- /home/cmzcc/c++projects/cc_muduo/noncopyable.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/Thread.cpp \
+ /usr/include/stdc-predef.h /home/cmzcc/c++projects/cc/cc_muduo/Thread.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/noncopyable.h \
  /usr/include/c++/13/functional \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -159,7 +159,7 @@ CMakeFiles/cc_muduo.dir/Thread.cpp.o: \
  /usr/include/c++/13/bits/charconv.h \
  /usr/include/c++/13/bits/basic_string.tcc /usr/include/c++/13/atomic \
  /usr/include/semaphore.h /usr/include/x86_64-linux-gnu/bits/semaphore.h \
- /home/cmzcc/c++projects/cc_muduo/CurrentThread.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/CurrentThread.h \
  /usr/include/x86_64-linux-gnu/sys/syscall.h \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \

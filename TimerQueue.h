@@ -6,10 +6,11 @@
 #include "TimerId.h"
 #include "noncopyable.h"
 #include"Timer.h"
+#include<mutex>
 class EventLoop;
 class Timer;
 
-class TimerQueue : noncopyable
+class TimerQueue : noncopyable, public std::enable_shared_from_this<TimerQueue>
 {
 public:
     explicit TimerQueue(EventLoop *loop);
@@ -34,4 +35,5 @@ private:
     const int timerfd_;
     Channel timerfdChannel_;
     TimerList timers_;
+    std::mutex mutex_;
 };

@@ -1,10 +1,10 @@
 CMakeFiles/cc_muduo.dir/DefaultPoller.cpp.o: \
- /home/cmzcc/c++projects/cc_muduo/DefaultPoller.cpp \
+ /home/cmzcc/c++projects/cc/cc_muduo/DefaultPoller.cpp \
  /usr/include/stdc-predef.h \
- /home/cmzcc/c++projects/cc_muduo/EpollPoller.h \
- /home/cmzcc/c++projects/cc_muduo/Poller.h \
- /home/cmzcc/c++projects/cc_muduo/noncopyable.h \
- /home/cmzcc/c++projects/cc_muduo/Timestamp.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/EpollPoller.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/Poller.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/noncopyable.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/Timestamp.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

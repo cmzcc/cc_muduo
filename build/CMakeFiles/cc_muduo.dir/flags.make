@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dcc_muduo_EXPORTS
 
-CXX_INCLUDES = -I/home/cmzcc/c++projects/cc_muduo/include
+CXX_INCLUDES = -I/home/cmzcc/c++projects/cc/cc_muduo/include
 
 CXX_FLAGS = -std=c++14 -fPIC
 

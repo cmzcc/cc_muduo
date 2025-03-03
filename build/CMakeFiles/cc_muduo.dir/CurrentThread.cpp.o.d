@@ -1,8 +1,9 @@
 CMakeFiles/cc_muduo.dir/CurrentThread.cpp.o: \
- /home/cmzcc/c++projects/cc_muduo/CurrentThread.cpp \
+ /home/cmzcc/c++projects/cc/cc_muduo/CurrentThread.cpp \
  /usr/include/stdc-predef.h \
- /home/cmzcc/c++projects/cc_muduo/CurrentThread.h /usr/include/unistd.h \
- /usr/include/features.h /usr/include/features-time64.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/CurrentThread.h \
+ /usr/include/unistd.h /usr/include/features.h \
+ /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \

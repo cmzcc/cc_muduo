@@ -1,6 +1,6 @@
 CMakeFiles/cc_muduo.dir/Timer.cpp.o: \
- /home/cmzcc/c++projects/cc_muduo/Timer.cpp /usr/include/stdc-predef.h \
- /home/cmzcc/c++projects/cc_muduo/Timer.h /usr/include/c++/13/atomic \
+ /home/cmzcc/c++projects/cc/cc_muduo/Timer.cpp /usr/include/stdc-predef.h \
+ /home/cmzcc/c++projects/cc/cc_muduo/Timer.h /usr/include/c++/13/atomic \
  /usr/include/c++/13/bits/atomic_base.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -57,4 +57,4 @@ CMakeFiles/cc_muduo.dir/Timer.cpp.o: \
  /usr/include/c++/13/ext/numeric_traits.h \
  /usr/include/c++/13/bits/cpp_type_traits.h \
  /usr/include/c++/13/ext/type_traits.h \
- /home/cmzcc/c++projects/cc_muduo/noncopyable.h
+ /home/cmzcc/c++projects/cc/cc_muduo/noncopyable.h

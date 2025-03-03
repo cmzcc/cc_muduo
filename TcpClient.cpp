@@ -155,7 +155,10 @@ void TcpClient::removeConnection(const TcpConnectionPtr &conn)
     }
 
     loop_->queueInLoop([conn]
-                       { conn->connectDestroyed(); });
+                      {
+                          if (conn) {
+                              conn->connectDestroyed();
+                          } });
 
     if (retry_ && connect_)
     {

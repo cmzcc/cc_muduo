@@ -80,22 +80,21 @@ namespace detail
             ::close(timerfd_);
         }
 
+        // TimerQueue.cpp
         TimerId TimerQueue::addTimer(Timer::TimerCallback cb, TimePoint when, Duration interval)
         {
             auto timer = std::make_shared<Timer>(std::move(cb), when, interval);
 
-            // 确保 loop_ 指针有效
-            if (!loop_)
-            {
-                LOG_ERROR("TimerQueue::addTimer - EventLoop is null");
-                return TimerId();
-            }
+            // 使用weak_ptr捕获当前对象的弱引用
+            std::weak_ptr<TimerQueue> weak_this = shared_from_this();
 
-            // 使用 queueInLoop 代替 runInLoop，避免复杂的闭包生命周期管理
-            loop_->queueInLoop([this, timer = std::move(timer)]() mutable
+            loop_->queueInLoop([weak_this, timer = std::move(timer)]() mutable
                                {
-        if (this && loop_) {  // 额外的安全检查
-            insert(std::move(timer));
+        if (auto shared_this = weak_this.lock()) {
+            // 确认对象存活后执行插入
+            shared_this->insert(std::move(timer));
+        } else {
+            LOG_ERROR("TimerQueue已销毁，无法添加定时器");
         } });
 
             return TimerId(timer, timer->sequence());
@@ -105,13 +104,14 @@ namespace detail
         {
             loop_->runInLoop([this, timerId]
                              {
-        auto it = timers_.begin();
-        for (; it != timers_.end(); ++it) {
-            if (it->second->sequence() == timerId.sequence_) {
-                timers_.erase(it);
-                break;
-            }
-        } });
+                         std::lock_guard<std::mutex> lock(mutex_);
+                         auto it = timers_.begin();
+                         for (; it != timers_.end(); ++it) {
+                             if (it->second->sequence() == timerId.sequence_) {
+                                 timers_.erase(it);
+                                 break;
+                             }
+                         } });
         }
 
         void TimerQueue::handleRead()
@@ -167,6 +167,12 @@ namespace detail
             }
 
             auto result = timers_.insert(Entry(when, timer));
+            if (earliestChanged)
+            {
+                // 更新timerfd触发时间
+                detail::resetTimerfd(timerfd_, timers_.begin()->first);
+            }
+  
             return earliestChanged;
         }
 

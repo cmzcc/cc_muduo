@@ -58,8 +58,10 @@ void Connector::stopInLoop()
     {
         setState(States::kDisconnected);
         int sockfd = removeAndResetChannel();
-        retry(sockfd);
+        sockets::close(sockfd); // 先关闭 socket
+        retry(retryDelayMs_);   // 传递时间
     }
+
 }
 
 void Connector::connect()
@@ -150,13 +152,11 @@ void Connector::handleWrite()
         int sockfd = removeAndResetChannel();
 
         int err = sockets::getSocketError(sockfd);
-        if (err)
+
+        if (err || sockets::isSelfConnect(sockfd))
         {
-            retry(sockfd);
-        }
-        else if (sockets::isSelfConnect(sockfd))
-        {
-            retry(sockfd);
+            sockets::close(sockfd);
+            retry(retryDelayMs_);
         }
         else
         {
@@ -168,6 +168,7 @@ void Connector::handleWrite()
             else
             {
                 sockets::close(sockfd);
+                retry(retryDelayMs_);
             }
         }
     }
@@ -183,19 +184,13 @@ void Connector::handleError()
     }
 }
 
-void Connector::retry(int delay)
+// Connector.cpp
+void Connector::retry(int delayMs)
 {
-    // 使用 weak_ptr 来管理 Connector 对象
     auto weak_this = std::weak_ptr<Connector>(shared_from_this());
-
-    // 设置定时器
-    loop_->runAfter(std::chrono::seconds(delay), [weak_this]()
-                         {
+    loop_->runAfter(std::chrono::milliseconds(delayMs), [weak_this]()
+                    {
         if (auto shared_this = weak_this.lock()) {
-            // 如果对象有效，继续执行重试逻辑
             shared_this->connect();
-        } else {
-            // 如果对象已经销毁，避免执行
-            LOG_ERROR("Connector has been destroyed, skipping retry.");
         } });
 }
