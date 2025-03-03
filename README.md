@@ -1,7 +1,5 @@
 # cc_muduo: A multithreaded C++ network library
 
-[![Build Status](https://travis-ci.org/guangqianpeng/tinyev.svg?branch=master)](https://travis-ci.org/guangqianpeng/tinyev)
-
 ## 简介
 
 cc_muduo是仿照muduo[1]实现的一个基于Reactor模式的多线程C++网络库，代码量约为3500行。
