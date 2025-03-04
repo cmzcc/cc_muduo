@@ -1,7 +1,6 @@
 CMakeFiles/cc_muduo.dir/SocketsOps.cpp.o: \
- /home/cmzcc/c++projects/cc/cc_muduo/SocketsOps.cpp \
- /usr/include/stdc-predef.h \
- /home/cmzcc/c++projects/cc/cc_muduo/SocketsOps.h \
+ /home/cmzcc/c++projects/cc_muduo/SocketsOps.cpp \
+ /usr/include/stdc-predef.h /home/cmzcc/c++projects/cc_muduo/SocketsOps.h \
  /usr/include/arpa/inet.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -54,7 +53,7 @@ CMakeFiles/cc_muduo.dir/SocketsOps.cpp.o: \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
  /usr/include/x86_64-linux-gnu/bits/in.h \
- /home/cmzcc/c++projects/cc/cc_muduo/Endian.h \
+ /home/cmzcc/c++projects/cc_muduo/Endian.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
@@ -63,6 +62,7 @@ CMakeFiles/cc_muduo.dir/SocketsOps.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+ /usr/include/c++/13/pstl/pstl_config.h \
  /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
@@ -112,7 +112,10 @@ CMakeFiles/cc_muduo.dir/SocketsOps.cpp.o: \
  /usr/include/c++/13/bits/basic_string.h \
  /usr/include/c++/13/ext/alloc_traits.h \
  /usr/include/c++/13/bits/alloc_traits.h \
- /usr/include/c++/13/bits/stl_construct.h \
+ /usr/include/c++/13/bits/stl_construct.h /usr/include/c++/13/string_view \
+ /usr/include/c++/13/bits/functional_hash.h \
+ /usr/include/c++/13/bits/hash_bytes.h \
+ /usr/include/c++/13/bits/string_view.tcc \
  /usr/include/c++/13/ext/string_conversions.h /usr/include/c++/13/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
@@ -129,12 +132,12 @@ CMakeFiles/cc_muduo.dir/SocketsOps.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/13/bits/charconv.h \
- /usr/include/c++/13/bits/functional_hash.h \
- /usr/include/c++/13/bits/hash_bytes.h \
  /usr/include/c++/13/bits/basic_string.tcc \
- /home/cmzcc/c++projects/cc/cc_muduo/Logger.h \
- /usr/include/c++/13/stdlib.h \
- /home/cmzcc/c++projects/cc/cc_muduo/noncopyable.h /usr/include/fcntl.h \
+ /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
+ /usr/include/c++/13/bits/uses_allocator.h \
+ /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
+ /home/cmzcc/c++projects/cc_muduo/Logger.h /usr/include/c++/13/stdlib.h \
+ /home/cmzcc/c++projects/cc_muduo/noncopyable.h /usr/include/fcntl.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
  /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/stat.h \

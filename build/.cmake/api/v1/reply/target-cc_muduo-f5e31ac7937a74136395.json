@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-std=c++14 -fPIC"
+					"fragment" : "-std=c++17 -fPIC"
 				}
 			],
 			"defines" : 
@@ -55,7 +55,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/cmzcc/c++projects/cc/cc_muduo/include"
+					"path" : "/home/cmzcc/c++projects/cc_muduo/include"
 				}
 			],
 			"language" : "CXX",
@@ -65,7 +65,7 @@
 				[
 					1
 				],
-				"standard" : "14"
+				"standard" : "17"
 			},
 			"sourceIndexes" : 
 			[

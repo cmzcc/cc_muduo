@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/cmzcc/c++projects/cc/cc_muduo/build"
+			"value" : "/home/cmzcc/c++projects/cc_muduo/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -419,7 +419,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/cmzcc/c++projects/cc/cc_muduo/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/cmzcc/c++projects/cc_muduo/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -491,7 +491,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/cmzcc/c++projects/cc/cc_muduo"
+			"value" : "/home/cmzcc/c++projects/cc_muduo"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1067,7 +1067,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/cmzcc/c++projects/cc/cc_muduo/build"
+			"value" : "/home/cmzcc/c++projects/cc_muduo/build"
 		},
 		{
 			"name" : "cc_muduo_IS_TOP_LEVEL",
@@ -1091,7 +1091,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/cmzcc/c++projects/cc/cc_muduo"
+			"value" : "/home/cmzcc/c++projects/cc_muduo"
 		}
 	],
 	"kind" : "cache",

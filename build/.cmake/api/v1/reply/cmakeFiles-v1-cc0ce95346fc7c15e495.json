@@ -450,8 +450,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/cmzcc/c++projects/cc/cc_muduo/build",
-		"source" : "/home/cmzcc/c++projects/cc/cc_muduo"
+		"build" : "/home/cmzcc/c++projects/cc_muduo/build",
+		"source" : "/home/cmzcc/c++projects/cc_muduo"
 	},
 	"version" : 
 	{

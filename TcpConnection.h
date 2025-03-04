@@ -10,7 +10,7 @@
 #include<memory>
 #include<string>
 #include<atomic>
-
+#include<any>
 class Channel;
 class EventLoop;
 class Socket;
@@ -34,6 +34,18 @@ public:
     const InetAddress& localAddress()const {return localAddr_;}
     const InetAddress& peerAddress()const {return peerAddr_;}
 
+    // 存储上下文数据
+    void setContext(std::any context)
+    {
+        context_ = std::move(context);
+    }
+
+    // 获取上下文数据
+    template <typename T>
+    T &getContext()
+    {
+        return std::any_cast<T &>(context_);
+    }
     bool connected()const {return state_==kConnected;}
     //发送数据
     void send(std::string buf);
@@ -82,8 +94,7 @@ private:
 
     void sendInLoop(const void* message,size_t len);
 
-
-
+    std::any context_; // 存储连接的上下文
     std::atomic_int state_;
     bool reading_;
 //这里和Acceptor类似    Acceptor->mainLoop      TcpConnection->subLoop
