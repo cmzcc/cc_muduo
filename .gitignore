@@ -1,5 +1,12 @@
 # 构建目录
 /build/
 
+# CMake 生成的文件
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+
 
 
