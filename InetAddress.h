@@ -10,7 +10,7 @@ private:
     sockaddr_in addr_;
 
 public:
-    explicit InetAddress(uint16_t port=0, string ip = "127.0.0.1"); // 设置默认ip
+    explicit InetAddress(uint16_t port = 0, string ip = "0.0.0.0"); // 设置默认ip
     explicit InetAddress(sockaddr_in &addr)
          : addr_(addr)
      {}

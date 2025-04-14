@@ -92,7 +92,7 @@ private:
     int revents_;     // poller返回的具体事件
     int index_;       //在 Poller 中的状态标识（ - 1 = 未注册，1 = 已注册，2 = 已删除）
 
-     std::weak_ptr<void>tie_;             // 绑定的对象（如 TcpConnection）的弱引用，用于防止回调时对象已被销毁
+    std::weak_ptr<void>tie_;             // 绑定的对象（如 TcpConnection）的弱引用，用于防止回调时对象已被销毁
     bool tied_;               //	标识是否已绑定对象
 
     // 因为channel通道里面能够获知fd最终发生的事件events，所以它负责调用具体事件的回调操作

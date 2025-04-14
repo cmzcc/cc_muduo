@@ -23,7 +23,6 @@ string InetAddress::toIpPort() const
     ::inet_ntop(AF_INET, &addr_.sin_addr, buffer, sizeof buffer);
     size_t end=strlen(buffer);
     uint16_t port=ntohs(addr_.sin_port);
-    cout<<buffer<<end<<":"<<port<<endl;
     return buffer;
 }
 uint16_t InetAddress::toPort() const

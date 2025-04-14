@@ -236,4 +236,5 @@ CMakeFiles/cc_muduo.dir/TcpConnection.cpp.o: \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
  /home/cmzcc/c++projects/cc_muduo/TimerId.h \
- /home/cmzcc/c++projects/cc_muduo/Timer.h /usr/include/c++/13/chrono
+ /home/cmzcc/c++projects/cc_muduo/Timer.h /usr/include/c++/13/chrono \
+ /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h

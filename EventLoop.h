@@ -8,7 +8,6 @@
 #include "CurrentThread.h"
 #include "noncopyable.h"
 #include "Timestamp.h"
-// 在 EventLoop.h 中添加
 #include "TimerQueue.h"
 #include "Timer.h"
 
@@ -72,7 +71,7 @@ private:
     Timestamp pollReturnTime_; // poller返回发生事件的channels的时间点
     std::unique_ptr<Poller> poller_;
 
-    int wakeupfd_; // 主要作用：当mainLoop获取一个新用户的channel,通过轮询算法选择一个subloop,通过该成员唤醒sublool处理channel
+    int wakeupfd_; // 主要作用：当mainLoop获取一个新用户的channel,通过轮询算法选择一个subloop,通过该成员唤醒subloop处理channel
     std::unique_ptr<Channel> wakeupChannel_;
 
     ChannelList activeChannels_;

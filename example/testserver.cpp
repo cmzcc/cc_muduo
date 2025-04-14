@@ -39,6 +39,7 @@ private:
           else
           {
               LOG_INFO("Conn DOWN : %s", conn->peerAddress().toIpPort().c_str());
+              conn->shutdown(); // 关闭写端 EPOLLUP-> closeCallback_
           }
           
              
@@ -50,7 +51,7 @@ private:
     {
         std::string msg=buf->retrieveAllAsString();
         conn->send(msg);
-        conn->shutdown();//关闭写端 EPOLLUP-> closeCallback_
+
     }
     EventLoop *loop_;
     TcpServer server_;
